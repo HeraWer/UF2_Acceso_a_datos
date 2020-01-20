@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-ene-2020 16:17:06 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="clases.Weapon" table="weapon" catalog="bv" optimistic-lock="version">
+        <composite-id name="id" class="clases.WeaponId">
+            <key-property name="weaponId" type="int">
+                <column name="weapon_id" />
+            </key-property>
+            <key-property name="name" type="string">
+                <column name="name" length="20" />
+            </key-property>
+            <key-property name="type" type="string">
+                <column name="type" length="30" />
+            </key-property>
+            <key-property name="damage" type="int">
+                <column name="damage" />
+            </key-property>
+            <key-property name="accuracy" type="int">
+                <column name="accuracy" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

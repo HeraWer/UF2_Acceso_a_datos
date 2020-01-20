@@ -1,0 +1,11 @@
+USE `bv`;
+DROP procedure IF EXISTS `borrar_personajes`;
+
+DELIMITER $$
+USE `bv`$$
+CREATE PROCEDURE `borrar_personajes` ()
+BEGIN
+	DELETE FROM bfvplayer WHERE class_id > 3;
+END$$
+
+DELIMITER ;

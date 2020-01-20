@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-ene-2020 16:17:06 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="clases.Class" table="class" catalog="bv" optimistic-lock="version">
+        <composite-id name="id" class="clases.ClassId">
+            <key-property name="classId" type="int">
+                <column name="class_id" />
+            </key-property>
+            <key-property name="className" type="string">
+                <column name="class_name" length="20" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

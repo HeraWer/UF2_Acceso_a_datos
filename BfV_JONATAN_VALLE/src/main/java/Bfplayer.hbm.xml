@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-ene-2020 16:17:06 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="clases.Bfplayer" table="bfplayer" catalog="bv" optimistic-lock="version">
+        <id name="userId" type="string">
+            <column name="user_id" length="15" />
+            <generator class="assigned" />
+        </id>
+        <property name="classId" type="int">
+            <column name="class_id" not-null="true" />
+        </property>
+        <property name="primaryWeapon" type="int">
+            <column name="primary_weapon" not-null="true" />
+        </property>
+        <property name="device1" type="int">
+            <column name="device1" not-null="true" />
+        </property>
+        <property name="kills" type="int">
+            <column name="kills" not-null="true" />
+        </property>
+        <property name="deads" type="int">
+            <column name="Deads" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

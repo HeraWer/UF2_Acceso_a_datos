@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-ene-2020 17:37:59 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="clases.Tripulacion" table="tripulacion" catalog="vuelos" optimistic-lock="version">
+        <composite-id name="id" class="clases.TripulacionId">
+            <key-property name="vueloIdentificador" type="string">
+                <column name="VUELO_IDENTIFICADOR" length="10" />
+            </key-property>
+            <key-property name="personalCodigo" type="short">
+                <column name="PERSONAL_CODIGO" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="personal" class="clases.Personal" update="false" insert="false" fetch="select">
+            <column name="PERSONAL_CODIGO" not-null="true" />
+        </many-to-one>
+        <many-to-one name="vuelo" class="clases.Vuelo" update="false" insert="false" fetch="select">
+            <column name="VUELO_IDENTIFICADOR" length="10" not-null="true" />
+        </many-to-one>
+        <property name="puesto" type="string">
+            <column name="PUESTO" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

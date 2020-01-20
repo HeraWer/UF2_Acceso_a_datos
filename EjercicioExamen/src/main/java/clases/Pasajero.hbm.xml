@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-ene-2020 17:37:59 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="clases.Pasajero" table="pasajero" catalog="vuelos" optimistic-lock="version">
+        <id name="cod" type="short">
+            <column name="COD" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="30" />
+        </property>
+        <property name="tlf" type="string">
+            <column name="TLF" length="10" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="DIRECCION" length="40" />
+        </property>
+        <property name="pais" type="string">
+            <column name="PAIS" length="15" />
+        </property>
+        <set name="pasajes" table="pasaje" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PASAJERO_COD" not-null="true" />
+            </key>
+            <one-to-many class="clases.Pasaje" />
+        </set>
+    </class>
+</hibernate-mapping>

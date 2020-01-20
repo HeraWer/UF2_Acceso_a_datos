@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-ene-2020 18:44:09 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="Vuelos.Vuelo" table="vuelo" catalog="vuelos" optimistic-lock="version">
+        <id name="identificador" type="string">
+            <column name="IDENTIFICADOR" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="aeropuertoOrigen" type="string">
+            <column name="AEROPUERTO_ORIGEN" length="10" />
+        </property>
+        <property name="aeropuertoDestino" type="string">
+            <column name="AEROPUERTO_DESTINO" length="10" />
+        </property>
+        <property name="tipoVuelo" type="string">
+            <column name="TIPO_VUELO" length="15" />
+        </property>
+        <property name="fechaVuelo" type="date">
+            <column name="FECHA_VUELO" length="10" />
+        </property>
+        <set name="pasajes" table="pasaje" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDENTIFICADOR" length="10" not-null="true" />
+            </key>
+            <one-to-many class="Vuelos.Pasaje" />
+        </set>
+        <set name="tripulacions" table="tripulacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="VUELO_IDENTIFICADOR" length="10" not-null="true" />
+            </key>
+            <one-to-many class="Vuelos.Tripulacion" />
+        </set>
+    </class>
+</hibernate-mapping>
