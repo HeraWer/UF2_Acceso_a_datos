@@ -1,2 +1,3 @@
 /.metadata/
 /.recommenders/
+hibernate-distribution-3.6.5.Final/project/hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/auditMethodSubclass/MappedSubclassingMethodAuditedTest.java
